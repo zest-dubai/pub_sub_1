@@ -7,7 +7,7 @@ Open the command prompt in same folder you have downloaded the docker-compose.ym
 ```bash
   MY_IP=your-ip docker-compose up 
 ```
-Open new window and create a topic manually named 'foo'with replication-factor 2 and no. of partitions 4.
+Open a new terminal and create a topic named 'foo'with replication-factor 2 and no. of partitions 4.
 ```bash
   docker run --net=host --rm confluentinc/cp-kafka:5.0.0 kafka-topics --create --topic foo --partitions 4 --replication-factor 2 --if-not-exists --zookeeper localhost:32181
 ```
@@ -17,5 +17,5 @@ Now build your dockerfile by using command
 ```
 followed by
 ```
-  docker build -it another_email .
+  docker run -it another_email .
 ```
