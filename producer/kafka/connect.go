@@ -30,13 +30,15 @@ func Configure(kafkaBrokerUrls []string, clientId string, topic string) (w *kafk
 
 
 
-func KafkaConnect()(writer *kafka.Writer, errr error){
+func KafkaConnect(topic string)(writer *kafka.Writer, errr error){
 
-	kafkaBrokersUrls:=[]string{"kafka-1:19092","kafka-2:29092" , "kafka-3:39092" }
-	var clientId string ="first_consumer"
-	var foo string = "foo"
+	//kafkaBrokersUrls:=[]string{"kafka-1:19092","kafka-2:29092","kafka-3:39092" }
+	
+	kafkaBrokersUrls:=[]string{"localhost:19092","localhost:29092","localhost:39092" }
 
-	var w,err = Configure(kafkaBrokersUrls,clientId,foo);
+	var clientId string ="email"
+
+	var w,err = Configure(kafkaBrokersUrls,clientId,topic);
 	return w, err;
 	
 }

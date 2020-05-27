@@ -1,4 +1,4 @@
-module main
+module producer
 
 go 1.14
 

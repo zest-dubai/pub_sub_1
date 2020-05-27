@@ -5,8 +5,8 @@ import(
 	"context"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
-	"main/kafka"
-	"main/requestbody"
+	"producer/kafka"
+	"producer/requestbody"
 )
 
 
@@ -14,8 +14,6 @@ func main(){
 
 	router := gin.Default()
 	
-	kafka.KafkaConnect();
-
 	router.POST("/api/v1/produce", func(c *gin.Context) {
 	  
 		var body requestbody.RequestBody
@@ -27,12 +25,21 @@ func main(){
 			"status":  "Transaction Successful",
 			"email":body.Email,	
 			"phone":body.Phone,
-			})
+		    })
 
+			topic:=body.Topic_name;
+			
 			data,_:=json.Marshal(body);
+			
+			fmt.Println(topic);
 
+			 _,er:=kafka.KafkaConnect(topic);
+			 fmt.Println("connect error",er);
+
+				
 			err := kafka.Push(context.Background(), nil, []byte(data))
-			fmt.Println("the error in producer is ",err);
+			
+			fmt.Println("push error ",err);
              
 
 		}else{
