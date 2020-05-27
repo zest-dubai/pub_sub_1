@@ -18,14 +18,14 @@ Open a termial and run
 ```bash
   docker run --net=host --rm confluentinc/cp-kafka:5.0.0 kafka-topics --create --topic foo --partitions 4 --replication-factor 2 --if-not-exists --zookeeper localhost:32181
 ```
-Now move to your producer directory and build the dockerfile of your producer as
+Now move to the "producer" directory and build the dockerfile of your producer as
 ```bash
   docker build -t producer .
 ```
 to create its image named 'producer'
 
 
-Move to your consumer directory and build the dockerfile of your consumer as
+Move to the "consumer" directory and build the dockerfile of your consumer as
 ```bash
   docker build -t consumer .
 ```
