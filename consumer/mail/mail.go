@@ -7,8 +7,8 @@ import (
 
 func Send(email string,transaction_id string)(er error) {
 	
-	from := "gaurav.sharma.civ17@itbhu.ac.in"
-	password := "12345"
+	from := "XXXX"
+	password := "XXXX"
 	to := email	
 	msg:="Subject: Transaction Successfull\n\n" +
 	 	"Your transaction has been completed.\nTransaction ID:"+transaction_id;

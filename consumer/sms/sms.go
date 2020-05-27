@@ -12,8 +12,8 @@ import (
 
 func Send(phone string, transaction_id string)(err error )  {
 
-  accountSid := "AC48b2fc2591dcbdcf78e6543339cfb4c9"
-  authToken := "975b63afb08c4027786adf9f56c52b24"
+  accountSid := "XXXX"
+  authToken := "XXXX"
   urlStr := "https://api.twilio.com/2010-04-01/Accounts/" + accountSid + "/Messages.json"
 
   quotes := "message api working"
@@ -22,8 +22,8 @@ func Send(phone string, transaction_id string)(err error )  {
 
 
   msgData := url.Values{}
-  msgData.Set("To","+919837681431")
-  msgData.Set("From","+12058431868")
+  msgData.Set("To","XXXX")
+  msgData.Set("From","XXXX")
   msgData.Set("Body",quotes)
   msgDataReader := *strings.NewReader(msgData.Encode())
 
