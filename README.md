@@ -2,7 +2,7 @@
 ## Installation
 First of all, you need to install docker, docker-compose and go in your system. 
 
-##Set-up
+## Setup
 Setup the docker-compose file with kafka and zookeeper, i.e. remove the producer and the consumer image setup from the docker-compose file provided in the repository(as the images have not been built yet)
 
 Open the terminal, move to the working directory and run
