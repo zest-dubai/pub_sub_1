@@ -8,13 +8,13 @@ Open a new terminal and create a topic named 'foo'with replication-factor 2 and 
   docker run --net=host --rm confluentinc/cp-kafka:5.0.0 kafka-topics --create --topic foo --partitions 4 --replication-factor 2 --if-not-exists --zookeeper localhost:32181
 ```
 
-Build your dockerfile of your producer as
+Build the dockerfile of your producer as
 ```bash
   docker build -t producer
 ```
 to create its image named 'producer'
 
-Build your dockerfile of your consumer as
+Build the dockerfile of your consumer as
 ```bash
   docker build -t consumer
 ```
@@ -25,4 +25,4 @@ Open the command prompt in same folder you have downloaded the docker-compose.ym
   MY_IP=your-ip docker-compose up 
 ```
 
-
+Use Postman to send the API requests to the producer service which would then publish the message to kafka, and the consumer will read it to send email and sms to the provided mail id and mobile number respectively.
