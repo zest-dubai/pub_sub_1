@@ -16,7 +16,7 @@ func main(){
 	
 	kafka.KafkaConnect();
 
-	router.POST("/done", func(c *gin.Context) {
+	router.POST("/api/v1/produce", func(c *gin.Context) {
 	  
 		var body requestbody.RequestBody
 		c.BindJSON(&body)
