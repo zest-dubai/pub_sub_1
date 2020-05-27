@@ -1,4 +1,4 @@
-# Pub_Sub
+# Pub_Sub (refer to the 'pub-sub project final' directory)
 ## Installation
 First of all, you need to install docker, docker-compose and go in your system. 
 
